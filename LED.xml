@@ -2,8 +2,8 @@
   <block type="controls_whileUntil" id="88" inline="false" x="329" y="249">
     <field name="MODE">UNTIL</field>
     <value name="NUMBER">
-      <block type="sensor_button" id="148">
-        <field name="OBJECT">ENTER</field>
+      <block type="sensor_object" id="180">
+        <field name="OBJECT">LEFTFRONT</field>
       </block>
     </value>
     <statement name="DO">
@@ -15,22 +15,29 @@
           </block>
         </value>
         <next>
-          <block type="led_select" id="42" inline="true">
-            <field name="ACTION">FLASH</field>
-            <value name="LED">
-              <block type="math_number" id="56">
-                <field name="NUM">5</field>
-              </block>
-            </value>
+          <block type="oled_color" id="189">
+            <field name="OBJECT">BLACK</field>
             <next>
-              <block type="robot_delay" id="150" inline="true">
-                <value name="DELAY">
-                  <block type="math_number" id="157">
-                    <field name="NUM">100</field>
+              <block type="led_select" id="42" inline="true">
+                <field name="ACTION">FLASH</field>
+                <value name="LED">
+                  <block type="math_number" id="56">
+                    <field name="NUM">5</field>
                   </block>
                 </value>
                 <next>
-                  <block type="movement_forward" id="167"></block>
+                  <block type="oled_color" id="212">
+                    <field name="OBJECT">GREEN</field>
+                    <next>
+                      <block type="robot_delay" id="150" inline="true">
+                        <value name="DELAY">
+                          <block type="math_number" id="157">
+                            <field name="NUM">100</field>
+                          </block>
+                        </value>
+                      </block>
+                    </next>
+                  </block>
                 </next>
               </block>
             </next>
