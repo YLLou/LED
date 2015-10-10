@@ -7,32 +7,34 @@
       </block>
     </value>
     <statement name="DO">
-      <block type="led_select" id="33" inline="true">
-        <field name="ACTION">FLASH</field>
-        <value name="LED">
-          <block type="math_number" id="49">
-            <field name="NUM">2</field>
-          </block>
-        </value>
+      <block type="oled_cleardisplay" id="234">
         <next>
-          <block type="oled_color" id="189">
-            <field name="OBJECT">BLACK</field>
+          <block type="oled_setcursor" id="249" inline="true">
+            <value name="STARTX">
+              <block type="math_number" id="375">
+                <field name="NUM">10</field>
+              </block>
+            </value>
+            <value name="STARTY">
+              <block type="math_number" id="382">
+                <field name="NUM">10</field>
+              </block>
+            </value>
             <next>
-              <block type="led_select" id="42" inline="true">
-                <field name="ACTION">FLASH</field>
-                <value name="LED">
-                  <block type="math_number" id="56">
-                    <field name="NUM">5</field>
-                  </block>
-                </value>
+              <block type="oled_drawtext" id="267">
+                <field name="TEXT">Left Front</field>
                 <next>
-                  <block type="oled_color" id="212">
-                    <field name="OBJECT">GREEN</field>
+                  <block type="oled_drawnumber" id="343" inline="true">
+                    <value name="NUMBER">
+                      <block type="sensor_object" id="358">
+                        <field name="OBJECT">LEFTFRONT</field>
+                      </block>
+                    </value>
                     <next>
-                      <block type="robot_delay" id="150" inline="true">
+                      <block type="robot_delay" id="269" inline="true">
                         <value name="DELAY">
-                          <block type="math_number" id="157">
-                            <field name="NUM">100</field>
+                          <block type="math_number" id="276">
+                            <field name="NUM">200</field>
                           </block>
                         </value>
                       </block>
